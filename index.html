@@ -34,6 +34,7 @@
   <div class="glow glow-2"></div>
   <div class="glow glow-3"></div>
 </div>
+<div class="bg-noise" aria-hidden="true"></div>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- ════════ NAV ════════ -->
@@ -107,14 +108,44 @@
         </div>
       </div>
     </div>
+    <a class="scroll-cue" href="#projects" aria-label="Aller aux projets">
+      défiler
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </section>
+
+  <!-- ════════ Bandeau défilant ════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>
+        <span class="marquee-item">Analyse de données</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Power BI</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Reporting &amp; KPIs</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Python</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Excel avancé</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">SEO / SEA</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Automatisation</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Création web</span><span class="marquee-sep">◆</span>
+      </span>
+      <span>
+        <span class="marquee-item">Analyse de données</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Power BI</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Reporting &amp; KPIs</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Python</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Excel avancé</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">SEO / SEA</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Automatisation</span><span class="marquee-sep">◆</span>
+        <span class="marquee-item">Création web</span><span class="marquee-sep">◆</span>
+      </span>
+    </div>
+  </div>
 
   <!-- ════════ PROJETS ════════ -->
   <section class="section section-alt" id="projects">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="section-num">// portfolio</span>
-        <h2 class="section-title">Projets web — livrés &amp; <em>mesurés</em></h2>
+        <h2 class="section-title">Projets web — livrés &amp; <em>mesurés</em><span class="count-chip">08</span></h2>
         <p class="section-sub">
           8 sites conçus de A à Z. Au-delà du design, ce qui m'intéresse : <strong>mesurer</strong> leur
           impact réel — trafic, conversions, positionnement Google.
@@ -247,6 +278,10 @@
     </nav>
   </div>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="Remonter en haut">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 <script src="assets/js/main.js" defer></script>
 </body>

@@ -104,4 +104,44 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { spy.observe(s); });
   }
+
+  /* ── Bouton retour en haut ───────────────── */
+  var toTop = document.getElementById('toTop');
+  if (toTop) {
+    window.addEventListener('scroll', function () {
+      toTop.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  var finePointer = !reduceMotion && window.matchMedia('(pointer: fine)').matches;
+
+  /* ── Tilt 3D de la photo ─────────────────── */
+  var frame = document.querySelector('.photo-frame');
+  if (frame && finePointer) {
+    var area = frame.parentElement || frame;
+    frame.style.transition = 'transform .25s cubic-bezier(.16,1,.3,1)';
+    area.addEventListener('pointermove', function (e) {
+      var r = frame.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      frame.style.transform = 'perspective(900px) rotateY(' + (px * 7).toFixed(2) + 'deg) rotateX(' + (-py * 7).toFixed(2) + 'deg)';
+    });
+    area.addEventListener('pointerleave', function () { frame.style.transform = ''; });
+  }
+
+  /* ── Boutons magnétiques ─────────────────── */
+  if (finePointer) {
+    document.querySelectorAll('.hero-cta .btn, .contact-actions .btn').forEach(function (btn) {
+      btn.addEventListener('pointermove', function (e) {
+        var r = btn.getBoundingClientRect();
+        var mx = e.clientX - r.left - r.width / 2;
+        var my = e.clientY - r.top - r.height / 2;
+        btn.style.transform = 'translate(' + (mx * 0.18).toFixed(1) + 'px,' + (my * 0.22).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('pointerleave', function () { btn.style.transform = ''; });
+    });
+  }
 })();
