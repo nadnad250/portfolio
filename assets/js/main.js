@@ -43,7 +43,7 @@
   /* ── Effet de frappe (terminal) ──────────── */
   var rotator = document.getElementById('rotator');
   if (rotator) {
-    var words = ['analyste_data', 'créateur_web', 'data_driven', 'automatisation'];
+    var words = ['maître_gestionnaire', 'reporting_data', 'finance_opérationnelle', 'excel_power_bi'];
     if (reduceMotion) {
       rotator.textContent = words[0];
     } else {
